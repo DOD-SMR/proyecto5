@@ -1,0 +1,66 @@
+[
+    {
+      "id": 1,
+      "categoria": "Obesidad grado III (mórbida)",
+      "extremoInferior": 39.9,
+      "extremoSuperior": 1000,
+      "consejo": "Este nivel representa un riesgo muy alto para la salud debido a la excesiva acumulación de grasa. Es indispensable intervención médica especializada. Evaluar posibilidades de tratamiento intensivo, incluso quirúrgico si está indicado. Monitorear comorbilidades en órganos vitales. Contar con apoyo multidisciplinar (nutrición, psicología, ejercicio).",
+      "color": "#D84315"
+    },
+    {
+      "id": 2,
+      "categoria": "Obesidad grado II",
+      "extremoInferior": 34.9,
+      "extremoSuperior": 39.9,
+      "consejo": "Este nivel conlleva riesgo elevado de enfermedades crónicas (diabetes, cardiopatías, hipertensión). Es clave un enfoque médico-nutricional intensivo. Posible apoyo farmacológico o intervenciones complementarias. Hacer seguimiento frecuente de salud. Apoyo psicológico en el manejo del cambio de hábitos.",
+      "color": "#F57C00"
+    },
+    {
+      "id": 3,
+      "categoria": "Obesidad grado I",
+      "extremoInferior": 29.9,
+      "extremoSuperior": 34.9,
+      "consejo": "En este nivel el exceso de grasa corporal ya puede implicar riesgos importantes. Se necesita un plan integral: dieta supervisada, ejercicio regular y cambios permanentes. Consultar con nutricionista y médico evaluando comorbilidades. Monitorizar presión arterial, colesterol y glucosa. Iniciar metas de reducción progresiva.",
+      "color": "#FFA000"
+    },
+    {
+      "id": 4,
+      "categoria": "Sobrepeso",
+      "extremoInferior": 24.9,
+      "extremoSuperior": 29.9,
+      "consejo": "Este nivel indica un exceso de peso que puede aumentar riesgos de salud con el tiempo. Se recomienda ajustar la dieta, reducir calorías vacías y grasas saturadas. Aumentar actividad física con ejercicios cardiovasculares y de fuerza. Establecer metas realistas de pérdida progresiva. Controlar parámetros de salud como glucosa y lípidos.",
+      "color": "#FBC02D"
+    },
+    {
+      "id": 5,
+      "categoria": "Peso normal",
+      "extremoInferior": 18.4,
+      "extremoSuperior": 24.9,
+      "consejo": "Este rango se considera saludable para la mayoría de personas. Mantener una dieta variada, consumir frutas, verduras, proteínas magras y grasas saludables. Realizar actividad física regular (aeróbica y fuerza). Dormir bien, manejar el estrés y evitar hábitos nocivos. Hacer chequeos médicos regulares.",
+      "color": "#388E3C"
+    },
+    {
+      "id": 6,
+      "categoria": "Delgadez leve",
+      "extremoInferior": 16.9,
+      "extremoSuperior": 18.4,
+      "consejo": "En este rango el peso está por debajo del óptimo pero con menor riesgo inmediato. Se puede mejorar con una dieta balanceada que contenga todos los macronutrientes. Hacer varias comidas al día con snacks nutritivos. Incluir ejercicio moderado para favorecer masa magra. Llevar control del estado general y peso.",
+      "color": "#F57C00"
+    },
+    {
+      "id": 7,
+      "categoria": "Delgadez moderada",
+      "extremoInferior": 16.0,
+      "extremoSuperior": 16.9,
+      "consejo": "Aquí el peso sigue siendo bajo y puede afectar la función inmune. Es útil aumentar gradualmente la ingesta calórica con alimentos densos en nutrientes. Realizar comidas frecuentes y nutritivas. Integrar actividad leve para estimular apetito. Contar con seguimiento médico y nutricional.",
+      "color": "#E64A19"
+    },
+    {
+      "id": 8,
+      "categoria": "Delgadez severa",
+      "extremoInferior": 0,
+      "extremoSuperior": 16.0,
+      "consejo": "Este nivel indica un bajo peso muy significativo. Es fundamental acudir a un profesional de salud para investigar causas posibles. Se debe fomentar una alimentación rica y equilibrada con mayores calorías. Incluir proteínas, grasas saludables y carbohidratos complejos. Monitorizar progreso y estado general mediante controles.",
+      "color": "#D32F2F"
+    }
+  ]
