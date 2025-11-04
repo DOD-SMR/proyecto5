@@ -7,3 +7,4 @@ export{NIVELES}
 function getNivel(imc:number):Nivel{
     NIVELES.find((masa) => masa.id === imc)
 }
+export {getNivel}
