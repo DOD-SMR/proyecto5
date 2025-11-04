@@ -1,33 +1,34 @@
 import React from 'react';
-import { View, StyleSheet, ScrollView } from 'react-native';
+import { FlatList, StyleSheet } from 'react-native';
 import { VisorNivel } from './VisorNivel';
 import { NIVELES } from '../helpers/Funciones';
+import { Nivel } from '../model/Nivel';
 
-
-interface Props {
+type CajaImcProps = {
   idImcUsuario: number;
 }
 
-export const CajaImc: React.FC<Props> = ({ idImcUsuario }) => {
+export default function CajaImc({ idImcUsuario }: CajaImcProps) {
   return (
-    <ScrollView contentContainerStyle={styles.contenedor}>
-      {NIVELES.map((nivel) => (
+    <FlatList
+      data={NIVELES}
+      renderItem={({ item }) => (
         <VisorNivel
-          key={nivel.id}
-          nivel={nivel}
-          seleccionado={nivel.id === idImcUsuario}
+          nivel={item}
+          seleccionado={item.id === idImcUsuario}
         />
-      ))}
-    </ScrollView>
+      )}
+      keyExtractor={(nivel: Nivel) => nivel.id.toString()}
+      contentContainerStyle={styles.contenedor}
+    />
   );
-};
-
+}
 
 const styles = StyleSheet.create({
   contenedor: {
-    flexDirection: 'column',     
-    alignItems: 'center',     
-    justifyContent: 'center',    
-    paddingVertical: 20,          
+    flexDirection: 'column',
+    alignItems: 'center',
+    justifyContent: 'center',
+    paddingVertical: 20,
   },
 });

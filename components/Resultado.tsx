@@ -1,35 +1,57 @@
 import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet, Modal, Pressable } from 'react-native';
 import { getNivel } from '../helpers/Funciones';
-import { CajaImc } from './CajaImc';
+import CajaImc from './CajaImc';
 
-interface Props {
+type ResultadoProps = {
   imc: number;
+  modalVisible: boolean;
+  setModalVisible: (visible: boolean) => void;
 }
 
-export const Resultado: React.FC<Props> = ({ imc }) => {
+export default function Resultado({ imc, modalVisible, setModalVisible }: ResultadoProps) {
   const nivel = getNivel(imc);
+
   return (
-    <View style={styles.contenedor}>
-      <Text style={styles.textoCategoria}>
-        {nivel.categoria} ({imc.toFixed(1)})
-      </Text>
+    <>
+      {modalVisible && (
+        <Modal
+          animationType="slide"
+          transparent={true}
+        >
+          {/* Zona superior transparente - al pulsar se cierra el modal */}
+          <Pressable
+            onPress={() => setModalVisible(false)}
+            style={styles.zonaSuperiorModal}
+          />
 
-      <Text style={styles.textoConsejo}>
-        {nivel.consejo}
-      </Text>
+          {/* Zona inferior - contiene el contenido */}
+          <View style={styles.zonaInferiorModal}>
+            <Text style={styles.textoCategoria}>
+              {nivel.categoria} ({imc.toFixed(1)})
+            </Text>
 
-      <CajaImc idImcUsuario={nivel.id} />
-    </View>
+            <Text style={styles.textoConsejo}>
+              {nivel.consejo}
+            </Text>
+
+            <CajaImc idImcUsuario={nivel.id} />
+          </View>
+        </Modal>
+      )}
+    </>
   );
-};
+}
 
 const styles = StyleSheet.create({
-  contenedor: {
+  zonaSuperiorModal: {
+    flex: 1,
+    backgroundColor: 'rgba(0,0,0,0.4)',
+  },
+  zonaInferiorModal: {
     position: 'absolute',
     bottom: 0,
-    left: 0,
-    right: 0,
+    width: '100%',
     backgroundColor: '#FFFFFF',
     borderTopLeftRadius: 48,
     borderTopRightRadius: 48,
@@ -42,8 +64,8 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.25,
     shadowRadius: 3.84,
     elevation: 4,
-    flexDirection: 'column',
     alignItems: 'center',
+    maxHeight: '80%',
   },
   textoCategoria: {
     fontSize: 24,
