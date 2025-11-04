@@ -9,7 +9,6 @@ interface Props {
 
 export const Resultado: React.FC<Props> = ({ imc }) => {
   const nivel = getNivel(imc);
-
   return (
     <View style={styles.contenedor}>
       <Text style={styles.textoCategoria}>
