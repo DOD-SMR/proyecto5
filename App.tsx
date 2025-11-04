@@ -14,7 +14,7 @@ export default function App() {
     const pesoNum = parseFloat(peso)
     const alturaNum = parseFloat(altura)
     
-    if (pesoNum <= 0 ||alturaNum <= 0) {
+    if (pesoNum <= 0 ||alturaNum <= 0 || isNaN(pesoNum) || isNaN(pesoNum)) {
       Alert.alert("ERROR", "Hay que ingresar valores de peso y altura positivos")
     } else {
       const resultado = pesoNum / Math.pow(alturaNum, 2)
@@ -40,7 +40,7 @@ export default function App() {
       />
       <TextInput
         style={styles.cuadrosTexto}
-        placeholder="Altura (m)"
+        placeholder="Altura (ej: 1.70 (m))"
         value={altura}
         onChangeText={setAltura}
       />
@@ -59,10 +59,13 @@ export default function App() {
             animationType={"slide"}
             transparent={true}
           >
-            <Pressable onPress={reset}></Pressable>
-            <View>
-              <Resultado imc={imc}/>
-            </View>
+          <View style={{flex: 1}}>
+            <Pressable
+              style={styles.fondoModal}
+              onPress={reset}
+            />
+            <Resultado imc={imc}/>
+          </View>
           </Modal>
         )
       }
@@ -108,5 +111,9 @@ const styles = StyleSheet.create({
     fontSize: 18,
     fontWeight: 600,
     textAlign: "center"
+  },
+  fondoModal: {
+    flex: 1, 
+    backgroundColor: 'rgba(0,0,0,0.5)'
   }
 });

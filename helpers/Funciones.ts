@@ -6,7 +6,7 @@ export{NIVELES}
 
 function getNivel(imc:number):Nivel{
     let NIVELESMUTABLE = NIVELES
-    let NivelImc = NIVELESMUTABLE.find((masa) => imc >= masa.extremoInferior && imc <= masa.extremoSuperior);
+    let NivelImc = NIVELESMUTABLE.find((masa) => imc >= masa.extremoInferior && imc < masa.extremoSuperior);
     if (!NivelImc) {
         // Nivel por defecto
         return {

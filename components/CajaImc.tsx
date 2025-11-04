@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, StyleSheet, ScrollView } from 'react-native';
-import { VisorNivel } from './VisorNivel';
+import VisorNivel from './VisorNivel';
 import { NIVELES } from '../helpers/Funciones';
 
 
